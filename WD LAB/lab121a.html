@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            color: black;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        .div1::first-line {
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+
+        .div2::first-letter {
+            color: burlywood;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: x-large;
+        }
+
+        .div1 {
+            border: 1px solid black;
+            margin: 20px;
+        }
+
+        .div1::selection {
+            color: aqua;
+            background-color: burlywood;
+        }
+
+        .div2 {
+            border: 1px solid black;
+            margin: 20px;
+            width: 400px;
+        }
+        .but:hover{
+            background-color: aqua;
+            
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://www.google.com" target="_blank">Google</a><br>
+    <a href="https://www.youtube.com/" target="_blank">You tube</a>
+
+    <div class="div1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Quidem explicabo deserunt eum dolorem accusamus
+        fuga
+        dolorum perferendis delectus mollitia voluptas veritatis, nobis, illo alias quis hic voluptate veniam, assumenda
+        nesciunt?
+    </div>
+
+    <div class="div2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div>
+       <button class="but">Button</button>
+    </div>
+</body>
+
+</html>

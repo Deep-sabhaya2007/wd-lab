@@ -1,0 +1,28 @@
+.box1 {
+        background-color: red;
+        height: 200px;
+        width: 200px;
+        /* animation-name: box1; */
+        background: linear-gradient(orange, white, green);
+
+    }
+
+    .box2 {
+        height: 200px;
+        width: 200px;
+        background: radial-gradient(orange, white, green);
+
+    }
+    .box3 {
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(to right,orange, white, green);
+
+    }
+    .box4 {
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(to bottom right,orange, white, green);
+
+    }
+    
