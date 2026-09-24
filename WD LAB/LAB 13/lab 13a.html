@@ -7,89 +7,220 @@
     <title>Document</title>
 </head>
 <style>
-    #page {
-        background-color: rgb(176, 255, 229);
-        height: 500px;
-        padding: 10px;
+    body {
+        background-color: rgb(202, 201, 201);
+        font-family: Arial, Helvetica, sans-serif;
     }
 
-    #Header {
-        background-color: rgb(246, 7, 7);
-        height: 30px;
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #121826;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 50px;
+
     }
 
-    #Content {
-        background-color: rgb(249, 237, 8);
-        height: 434px;
-        padding: 20px;
+    .navbar a {
+        text-decoration: none;
+        /* gap: 50px; */
+        color: wheat;
+    }
+
+    .div2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: xx-large;
+        background-color: gray;
+    }
+
+    .card {
+        border: 1px solid black;
+        border-radius: 15px 15px 15px 15px;
+        height: 570px;
+        width: 300px;
+        margin-top: 20px;
+
+    }
+
+    .first {
+        height: 35px;
+        border: 1px solid black;
+        width: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
         color: white;
+        background-color: black;
     }
 
-    .Entry {
-        background-color: rgb(85, 85, 85);
-        margin: 10px;
-        padding: 10px;
-        width: 600px;
-    }
-
-    .Sidebar {
+    .para {
         float: right;
-        background-color: rgb(125, 124, 124);
-        height: 200px;
-        width: 600px;
-        padding: 20px;
+        margin-left: 75px;
     }
 
-    #left {
-        float: left;
+    .heading {
+        float: right;
     }
 
-    #footer {
-        background-color: blue;
+    .white {
+        float: inline-end;
+        font-size: 55px;
+        background-color: white;
+        height: 120px;
+        padding-left: 10px;
     }
 
-    @media screen and (min-width:100px) and (max-width:900px) and (min-height:500px) {
-        #Content {
-            background-color: bisque;
-            text-decoration-color: white;
-        }
+    .last {
+        background-color: yellow;
+        float: inline-end;
+        height: 250px;
+        width: 300px;
+        border-radius: 0 0 15px 15px;
+        font-size: 220px;
+        font-weight: 700;
+    }
 
-        .Sidebar {
-            width: auto;
-            height: auto;
-        }
+    .p1 {
+        font-size: medium;
+        transform: rotate(-90deg);
+        color: yellow;
+        margin-right: 130px;
+        margin-top: -145px;
+        font-size: medium;
 
-        .Entry {
-            height: auto;
-            width: auto;
-        }
+    }
+
+    .text {
+        float: right;
+        /* border: 1px solid black; */
+        border-radius: 15px 15px 15px 15px;
+        height: 570px;
+        width: 300px;
+        margin-top: -560px;
+        margin-right: 700px;
+
+    }
+
+    .para1 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 900px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: larger;
+    }
+
+    .para2 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 900px;
+        margin-top: 50px;
+        font-size: larger;
+    }
+
+    .line3 {
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 500px;
+        margin-top: 50px;
+        margin-left: 190px;
+        font-size: larger;
+        border-radius: 15px 15px 15px 15px;
+        border: 2px solid orange;
+        background-color: orange;
+
+    }
+
+    footer {
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        background-color: #121826;
+        padding-left: 650px;
+        padding-bottom: 10px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        /* display: flex; */
+        gap: 50px;
+    }
+
+    .line1 {
+        color: white;
+        padding-bottom: 10px;
+    }
+
+    .line2 {
+        color: white;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 400px;
+        height: 50px;
+        border-radius: 15px 15px 15px 15px;
+        border: 2px solid orange;
+        background-color: orange;
 
     }
 </style>
 
-
 <body>
-    <div id="page">page
-        <div id="Header">Header
-        </div>
+    <!-- div 1 -->
+    <div class="navbar">
 
-        <div id="Content">
-            <div>Content</div>
-
-            <div id="left">
-                <div class="Entry">Entry</div>
-                <div class="Entry">Entry</div>
-                <div class="Entry">Entry</div>
-            </div>
-
-            <div class="Sidebar">Sidebar</div>
-
-
-        </div>
-
+        <a href="#">The Book Series</a>
+        <a href="#">Testimonials</a>
+        <a href="#">The Author</a>
+        <a href="#">Free Resources</a>
 
     </div>
-    <div id="footer">&copy Dershan Univercity</div>
+    <!-- div 2 -->
+
+    <div class="div2">
+        <pre>You Dont Know Java Script</pre>
+    </div>
+    <div class="card">
+        <div class="first">O'REILLY <sup>*</sup></div>
+        <div class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, maiores! Voluptate molestias
+            doloribus aspernatur velit</div>
+        <div class="heading">
+            <h2>KYLE SIMPSON</h2>
+        </div>
+        <div class="white">COMPLITE SERIES</div>
+        <div class="last">JS <p class="p1">YOU DON'T KNOW</p>
+        </div>
+        <div class="js"></div>
+    </div>
+    <div class="text">
+        <div class="para1">Don't just drift through Java Script</div>
+        <div class="para1">Understand how JavaScript Works</div>
+        <div class="para2">Start your journey through the bumpy side of Javascript</div>
+        <div class="line3">ORDER YOUR COPY NOW</div>
+
+    </div>
+
+    <footer>
+        <div class="line1">The first ebook in the book series is absolutely free.</div>
+        <div class="line2">FIND OUT MORE ABOUT THIS OFFER</div>
+    </footer>
+
+
+
+
+
+
+
 </body>
 
 </html>
