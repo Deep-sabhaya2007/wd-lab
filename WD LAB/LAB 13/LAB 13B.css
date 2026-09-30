@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+
+}
+.right{
+    border:  1px solid black;
+    height: 600px;
+    width: 600px;
+}
+.left{
+    border:  1px solid black;
+    height: 600px;
+    width: 600px;
+    background-color: rgb(201,205,205);
+}
