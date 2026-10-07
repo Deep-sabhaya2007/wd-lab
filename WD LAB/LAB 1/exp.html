@@ -1,17 +1,685 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundAMP Logo</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Movie Description</title>
+
+    <style>
+        /* =========================
+           BASIC RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            background-color: #121826;
+            color: #e2e8f0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            min-height: 100vh;
+            padding: 30px 20px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+
+            width: 100%;
+            max-width: 850px;
+
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 28px;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        header p {
+            color: #a0aec0;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #38bdf8;
+            text-decoration: none;
+
+            padding: 8px 14px;
+            border-radius: 6px;
+
+            font-weight: 500;
+
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        /* Navigation hover */
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: #4f46e5;
+            transform: translateY(-3px);
+        }
+
+        /* Animated underline */
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 50%;
+            bottom: 3px;
+
+            width: 0;
+            height: 2px;
+
+            background-color: #ffffff;
+
+            transform: translateX(-50%);
+
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 70%;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+
+            color: #f6ad55;
+
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+        /* =========================
+           MOVIE CARD
+        ========================= */
+
+        .movie-card {
+            background-color: #1a202c;
+
+            border: 1px solid #2d3748;
+            border-radius: 12px;
+
+            max-width: 850px;
+            width: 100%;
+
+            display: flex;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.6);
+        }
+
+
+        /* =========================
+           POSTER
+        ========================= */
+
+        .poster-container {
+            width: 320px;
+            min-width: 320px;
+
+            border-right: 1px solid #2d3748;
+
+            background-color: #0f172a;
+
+            overflow: hidden;
+        }
+
+        .poster-container img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.4s ease;
+        }
+
+        .movie-card:hover .poster-container img {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           MOVIE DETAILS
+        ========================= */
+
+        .movie-details {
+            padding: 30px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+
+            flex: 1;
+        }
+
+        .movie-title {
+            font-size: 30px;
+
+            color: #ffffff;
+
+            margin-bottom: 16px;
+
+            font-weight: 700;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            color: #cbd5e0;
+        }
+
+        .info-item strong {
+            color: #ffffff;
+            margin-right: 4px;
+        }
+
+        .story {
+            margin-top: 5px;
+            margin-bottom: 24px;
+        }
+
+
+        /* =========================
+           TRAILER BUTTON
+        ========================= */
+
+        .trailer-link {
+            display: inline-flex;
+
+            align-items: center;
+            align-self: flex-start;
+
+            background-color: #4f46e5;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-weight: 600;
+            font-size: 15px;
+
+            padding: 10px 18px;
+
+            border-radius: 6px;
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .trailer-link:hover {
+            background-color: #6366f1;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 40px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #2d3748;
+
+            width: 100%;
+            max-width: 850px;
+
+            text-align: center;
+
+            color: #a0aec0;
+
+            font-size: 13px;
+        }
+
+        footer h2 {
+            font-size: 16px;
+
+            color: #ffffff;
+
+            margin-bottom: 6px;
+        }
+
+        footer p {
+            margin-bottom: 6px;
+        }
+
+
+        /* =========================
+           FEEDBACK BUTTON
+        ========================= */
+
+        .feedback-container {
+            margin-top: 15px;
+        }
+
+        .submit-btn {
+            display: inline-block;
+
+            padding: 10px 24px;
+
+            background-color: #1e293b;
+
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            border: 1px solid #475569;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition:
+                all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #6366f1;
+
+            border-color: #6366f1;
+
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 15px rgba(99, 102, 241, 0.3);
+        }
+
+
+        /* =========================
+           TABLET
+           900px AND BELOW
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .movie-card {
+                max-width: 750px;
+            }
+
+            .poster-container {
+                width: 280px;
+                min-width: 280px;
+            }
+
+            .movie-details {
+                padding: 25px;
+            }
+
+            .movie-title {
+                font-size: 26px;
+            }
+
+            .info-item {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+           680px AND BELOW
+        ========================= */
+
+        @media (max-width: 680px) {
+
+            body {
+                padding: 20px 12px;
+            }
+
+            header {
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+
+            header p {
+                font-size: 13px;
+            }
+
+            nav {
+                gap: 5px;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 7px 12px;
+            }
+
+            .section-title {
+                font-size: 19px;
+                margin-bottom: 15px;
+            }
+
+            /* Stack poster and details */
+
+            .movie-card {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .poster-container {
+                width: 100%;
+                min-width: 100%;
+
+                height: 380px;
+
+                border-right: none;
+
+                border-bottom: 1px solid #2d3748;
+            }
+
+            .movie-details {
+                padding: 20px;
+            }
+
+            .movie-title {
+                font-size: 24px;
+                margin-bottom: 14px;
+            }
+
+            .info-item {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .trailer-link {
+                font-size: 14px;
+                padding: 9px 15px;
+            }
+
+            footer {
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+           400px AND BELOW
+        ========================= */
+
+        @media (max-width: 400px) {
+
+            body {
+                padding: 15px 8px;
+            }
+
+            header h1 {
+                font-size: 19px;
+            }
+
+            header p {
+                font-size: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .section-title {
+                font-size: 17px;
+            }
+
+            .poster-container {
+                height: 320px;
+            }
+
+            .movie-details {
+                padding: 16px;
+            }
+
+            .movie-title {
+                font-size: 21px;
+            }
+
+            .info-item {
+                font-size: 13px;
+            }
+
+            .trailer-link {
+                width: 100%;
+                justify-content: center;
+            }
+
+            footer h2 {
+                font-size: 14px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
 
-    <div class="logo">
-        <div class="guitar">🎸</div>
-        <div class="brand">Sound<span>AMP</span></div>
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🎬 MOVIE DESCRIPTION</h1>
+
+        <p>Your Ultimate Movie Explorer</p>
+
+        <nav>
+            <a href="./home.html">Home</a>
+        </nav>
+
+    </header>
+
+
+    <!-- SECTION TITLE -->
+
+    <div class="section-title">
+        ⭐ Featured Movie
     </div>
 
+
+    <!-- MOVIE CARD -->
+
+    <div class="movie-card">
+
+        <div class="poster-container">
+
+            <img
+                src="https://image.tmdb.org/t/p/w500/lcU1IHJ3K14HKLpGQnvdlt7tpQQ.jpg"
+                alt="Spider-Man: Brand New Day">
+
+        </div>
+
+
+        <div class="movie-details">
+
+            <h2 class="movie-title">
+                Spider-Man: Brand New Day
+            </h2>
+
+
+            <div class="info-item">
+                <strong>Genre:</strong>
+                Action | Adventure | Sci-Fi
+            </div>
+
+
+            <div class="info-item">
+                <strong>Release Year:</strong>
+                2026
+            </div>
+
+
+            <div class="info-item">
+                <strong>Duration:</strong>
+                2h 25min
+            </div>
+
+
+            <div class="info-item">
+                <strong>Rating:</strong>
+                ⭐ 8.3/10
+            </div>
+
+
+            <div class="info-item">
+                <strong>Director:</strong>
+                Destin Daniel Cretton
+            </div>
+
+
+            <div class="info-item story">
+
+                <strong>Story:</strong>
+
+                Following the world-altering events that erased his
+                identity from everyone's memory, Peter Parker attempts
+                to rebuild his life as a street-level superhero,
+                balancing college life with a perilous new criminal
+                threat emerging in New York City.
+
+            </div>
+
+
+            <a
+                href="https://youtu.be/Fi1wAaQkJHU?si=uHzoinGgwlBzBOLE"
+                class="trailer-link"
+                target="_blank">
+
+                ► Watch Trailer
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>🎬 MOVIE DESCRIPTION</h2>
+
+        <p>Explore. Discover. Enjoy Movies.</p>
+
+        <p>© 2026 CineVerse | Movie Information Website</p>
+
+
+        <div class="feedback-container">
+
+            <a href="./feedback.html">
+
+                <button
+                    type="button"
+                    class="submit-btn">
+
+                    Feedback
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </footer>
+
 </body>
+
 </html>
+```
