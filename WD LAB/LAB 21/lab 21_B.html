@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="main" style="float: left;">
+        <div class="container">
+            <div class="row">
+                <div class="container" style="text-align: center;">
+                    <a class="navbar-brand" href="#">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Bootstrap" width="75" height="60">
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container" style="text-align: center;">
+                    <h4>Checkout form</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container" style="text-align: center;">
+                    Below is an example form built entirely with Bootstrap's form controls. Each required form group has
+                    a
+                    <br>validation state that can be triggered by attempting to submit the form without completing it.
+                </div>
+            </div>
+        </div>
+
+
+        <!-- form -->
+        <div class="container" style="margin-top: 50px;">
+
+            <div class="row">
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">Friest Name</label>
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                </div>
+                <div class="col">
+                    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                </div>
+            </div>
+            <br>
+
+
+            <!-- username -->
+
+            <div class="col-auto">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+
+                <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+                <div class="input-group">
+                    <div class="input-group-text">@</div>
+                    <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
+                </div>
+            </div>
+            <br>
+
+            <!-- email -->
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Email(optional)</label>
+                <input type="email" class="form-control" id="formGroupExampleInput" placeholder="you@example.com">
+            </div>
+            <!-- address -->
+            <div class="col-12">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <br>
+            <!-- city type -->
+            <div class="row">
+                <div class="col">
+                    <label for="inputCity" class="form-label">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+
+                <div class="col">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>Gujrat</option>
+                        <option>Gujrat</option>
+                        <option>Gujrat</option>
+                        <option>Gujrat</option>
+                    </select>
+
+                </div>
+                <div class="col">
+                    <label for="inputZip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+                <!-- check point -->
+                <br><br>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Shipping address is same as my billing address
+                        </label>
+                        <br>
+                        <input class="form-check-input" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
+                            Save this informatin for next time </label>
+                    </div>
+                </div>
+
+            </div>
+            <br><br><br>
+            <!-- paymant method -->
+            <fieldset class="row mb-3">
+                <h3 class="display mt-5">Payment</h3>
+
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                            checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Credit Card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            Debit Card
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            PayPal
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- card details -->
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Name on card</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="inputPassword6" class="form-control"
+                        aria-describedby="passwordHelpInline">
+                </div>
+
+            </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Name on card</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="inputPassword6" class="form-control"
+                        aria-describedby="passwordHelpInline">
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div style="float: right; margin-top: 50px; margin-right: 50px;">
+
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Featured
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h6>Product Name</h6>
+                        <p>Brief Description</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Product Name</h6>
+                        <p>Brief Description</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Product Name</h6>
+                        <p>Brief Description</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Product Name</h6>
+                        <p>Brief Description</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Product Name</h6>
+                        <p>Brief Description</p>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="border p-2 text-center" style="width: 200px;">
+                <div class="d-flex p-2 border">
+                    <div>Promo Code</div>
+                    <button class="bg-dark-subtle">Redeem</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
